@@ -2,7 +2,7 @@
 
 Projeto em angular 8 para a apresentação de um dashboard com as skills pessoais.
 
-![image](https://user-images.githubusercontent.com/2818123/119277782-f19f5780-bbf7-11eb-8d83-1bc1d8aad87b.png)
+![image](https://user-images.githubusercontent.com/2818123/119278089-73dc4b80-bbf9-11eb-951d-48c6ef4ba2de.png)
 
 Atividades
 
