@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
       (ret: Array<any>) => {
         this.cards = ret
       }, errors => {
-        console.error(error);
+        console.error(errors);
       }, () => {
         this.loading = false;
       }
