@@ -1,0 +1,17 @@
+<ng-container *ngIf="contextual">
+  <span>
+    <ng-content></ng-content>
+  </span>
+  <span class="icon-container" *ngIf="show">
+    <mat-icon aria-hidden="false" aria-label="loading icon" class='rotating'>autorenew</mat-icon>
+  </span>
+</ng-container>
+
+<ng-container *ngIf="!contextual">
+  <div class="global-loading" *ngIf="show">
+    <div class="icon-container">
+      <mat-icon aria-hidden="false" aria-label="loading icon" class='rotating'>autorenew</mat-icon>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</ng-container>
