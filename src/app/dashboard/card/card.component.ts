@@ -13,7 +13,6 @@ export class CardComponent implements OnInit {
   @Input() card;
 
   constructor(
-    private httpClient: HttpClient,
     private skillService: SkillService
   ) { }
 
@@ -41,7 +40,7 @@ export class CardComponent implements OnInit {
 
   cardClasses(card: any){
     return { 
-      'likes-5': card.likes > 5 && card.likes < 10, 
+      'likes-5': card.likes >= 5 && card.likes <= 10,
       'likes-10': card.likes > 10,
     }
   }

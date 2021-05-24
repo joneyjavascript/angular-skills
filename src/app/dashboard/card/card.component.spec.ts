@@ -1,4 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule, MatIconModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingComponent } from 'src/app/components/loading/loading.component';
 
 import { CardComponent } from './card.component';
 
@@ -8,7 +14,8 @@ describe('CardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
+      imports: [ BrowserModule, BrowserAnimationsModule, FlexLayoutModule, MatIconModule, MatCardModule, HttpClientModule ],
+      declarations: [ CardComponent, LoadingComponent ]
     })
     .compileComponents();
   }));
@@ -16,10 +23,25 @@ describe('CardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.card = { name: "Skill Test", likes: 1 }
+    fixture.detectChanges();
     expect(component).toBeTruthy();
+  });
+
+  it('card with more than 5 likes use especific css class', () => {
+    const cardElement: HTMLElement = fixture.nativeElement;
+    component.card = { name: "Skill Test", likes: 5 };
+    fixture.detectChanges();
+    expect(cardElement.querySelector('.like-button').classList.contains('likes-5')).toBeTruthy();
+  });
+
+  it('card with more than 10 likes use especific css class', () => {
+    const cardElement: HTMLElement = fixture.nativeElement;
+    component.card = { name: "Skill Test", likes: 10 };
+    fixture.detectChanges();
+    expect(cardElement.querySelector('.like-button').classList.contains('likes-10')).toBeTruthy();
   });
 });

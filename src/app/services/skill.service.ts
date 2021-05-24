@@ -6,15 +6,11 @@ import { Skill } from "../interfaces/Skill";
   providedIn: 'root'
 })
 export class SkillService {
-  
-  constructor(
-    public http: HttpClient
-  ){
 
-  }
+  constructor(public http: HttpClient){ }
 
   public getSkill(id: number){
-    return this.http.get('/api/skills/' + id);
+    return this.http.get(`/api/skills/${ id }`);
   }
 
   public getSkills(){
@@ -22,11 +18,11 @@ export class SkillService {
   }
 
   public updateSkill(skill: Skill){
-    return this.http.put('/api/skills/' + skill.id, skill);
+    return this.http.put(`/api/skills/${ skill.id }`, skill);
   }
 
   public deleteSkill(id: number){
-    return this.http.delete('/api/skills/' + id);
+    return this.http.delete(`/api/skills/${ id }`);
   }
 
   public createSkill(skill: Skill){

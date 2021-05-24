@@ -16,7 +16,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   imports:      [ 
-    BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 1000}),
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}),
     MatCardModule, FlexLayoutModule, MatIconModule
   ],
   declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, LoadingComponent ],
