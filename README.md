@@ -2,6 +2,8 @@
 
 Projeto em angular 8 para a apresentação de um dashboard com as skills pessoais.
 
+![image](https://user-images.githubusercontent.com/2818123/119278089-73dc4b80-bbf9-11eb-951d-48c6ef4ba2de.png)
+
 Atividades
 
 * 1. Responsividade do Dashboard de Skills
