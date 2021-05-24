@@ -5,12 +5,21 @@
   padding-bottom: 50px;
 }
 
+.like-button {
+  color: #F00;
+}
+
+.heart-icon {
+  position: relative;
+  bottom: -7px;
+}
+
 .likes-5 {
-  color: blue;
+  color: blue !important;
 }
 
 .likes-10 {
-  color: green;
+  color: green !important;
 }
 
 mat-card-actions {

@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -17,7 +17,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 @NgModule({
   imports:      [ 
     BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}),
-    MatCardModule, FlexLayoutModule, MatIconModule
+    MatCardModule, FlexLayoutModule, MatIconModule, MatTooltipModule
   ],
   declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, LoadingComponent ],
   bootstrap:    [ AppComponent ]

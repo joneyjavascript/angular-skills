@@ -12,9 +12,16 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button class='like-button' mat-button (click)="onLike(card)" [ngClass]="cardClasses(card)">
-      <app-loading [show]="loadingCounter>0">LIKE {{card.likes}}</app-loading>
+    <button class='like-button' mat-button (click)="onLike(card)" [ngClass]="cardClasses(card)" [matTooltip]="'Like'">
+      <app-loading [show]="loadingCounter>0">
+        <mat-icon *ngIf="!card.likes" class="heart-icon">favorite_border</mat-icon>
+        <mat-icon *ngIf="card.likes" class="heart-icon">favorite</mat-icon>
+        {{card.likes}}
+      </app-loading>
     </button>
-    <button mat-button (click)="onShare(card)">SHARE</button>
+    <button mat-button (click)="onShare(card)" [matTooltip]="'Like'">
+      Share
+      <mat-icon>share</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>

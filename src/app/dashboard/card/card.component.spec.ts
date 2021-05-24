@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
@@ -14,7 +14,7 @@ describe('CardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ BrowserModule, BrowserAnimationsModule, FlexLayoutModule, MatIconModule, MatCardModule, HttpClientModule ],
+      imports: [ BrowserModule, BrowserAnimationsModule, FlexLayoutModule, MatIconModule, MatCardModule, HttpClientModule, MatTooltipModule ],
       declarations: [ CardComponent, LoadingComponent ]
     })
     .compileComponents();
@@ -40,7 +40,7 @@ describe('CardComponent', () => {
 
   it('card with more than 10 likes use especific css class', () => {
     const cardElement: HTMLElement = fixture.nativeElement;
-    component.card = { name: "Skill Test", likes: 10 };
+    component.card = { name: "Skill Test", likes: 11 };
     fixture.detectChanges();
     expect(cardElement.querySelector('.like-button').classList.contains('likes-10')).toBeTruthy();
   });
